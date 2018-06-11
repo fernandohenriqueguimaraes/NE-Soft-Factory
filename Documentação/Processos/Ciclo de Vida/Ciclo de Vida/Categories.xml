@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ArrayOfCategory xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Category>
+    <Color>Orange</Color>
+    <Text>Categoria laranja</Text>
+  </Category>
+  <Category>
+    <Color>Red</Color>
+    <Text>Categoria vermelha</Text>
+  </Category>
+  <Category>
+    <Color>Yellow</Color>
+    <Text>Categoria amarela</Text>
+  </Category>
+  <Category>
+    <Color>Blue</Color>
+    <Text>Categoria azul</Text>
+  </Category>
+  <Category>
+    <Color>Purple</Color>
+    <Text>Categoria roxa</Text>
+  </Category>
+  <Category>
+    <Color>Green</Color>
+    <Text>Categoria verde</Text>
+  </Category>
+</ArrayOfCategory>

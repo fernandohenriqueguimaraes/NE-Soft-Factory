@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<DocumentationSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PdfPath>C:\Users\Helton\OneDrive\Mestrado\Cesar\Ciclo de vida\Ciclo de Vida - Executar.pdf</PdfPath>
+  <WordTemplatePath>C:\Program Files (x86)\Bizagi\Bizagi Process Modeler\Modeler\Templates\ModelerTemplate.dot</WordTemplatePath>
+  <SelectedDiagrams>
+    <DiagramId>119b26b8-141d-4aff-a8cb-e4a7f92cf6ac</DiagramId>
+  </SelectedDiagrams>
+  <Settings>
+    <DiagramDocumentationSettings ElementId="f05775cb-07ad-4d54-a9e6-6a3d31bc7b44">
+      <ProcessSettings>
+        <ProcessDocSettings ProcessId="7e14f5ed-4ab6-42b3-a199-1d14fde5df7e">
+          <Elements>
+            <Id>40e09ea4-1ee4-4dee-ac29-7e4a0c997850</Id>
+            <Id>e25befcd-3a53-44c4-ab93-f62e2601e2b1</Id>
+            <Id>847971cc-fcb5-40e0-b614-fca5b51c0990</Id>
+            <Id>98fa0158-bb67-4668-a067-9fcc9806bec8</Id>
+            <Id>1cdb6825-7b3e-4c7f-81f9-c49f2197a853</Id>
+            <Id>a38c879c-f96b-402e-ac9b-f7e022549ece</Id>
+            <Id>2667f856-4be2-44af-8c8f-7b0cb5891668</Id>
+            <Id>7992360b-082a-4d8c-aaed-f8990d3662c0</Id>
+            <Id>82c0278a-17c3-427f-972f-eb2ad58b7a40</Id>
+            <Id>96d415ca-f4c9-425a-b36d-723079342724</Id>
+            <Id>ecacabcd-8d90-495d-9468-06daba9da640</Id>
+          </Elements>
+        </ProcessDocSettings>
+      </ProcessSettings>
+    </DiagramDocumentationSettings>
+  </Settings>
+</DocumentationSettings>
