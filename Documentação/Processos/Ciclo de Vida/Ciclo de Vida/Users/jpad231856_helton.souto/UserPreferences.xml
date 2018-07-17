@@ -2,8 +2,8 @@
 <UserPreferences xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <OpenedItems>
     <ModelItem ItemType="Diagram" DiagramId="d3cc9425-5c9e-41a3-b46c-5a9441bc894c" IsSelected="false" />
-    <ModelItem ItemType="Diagram" DiagramId="d88294c8-0fb4-447f-ac24-626e641b0dc1" IsSelected="false" />
-    <ModelItem ItemType="Diagram" DiagramId="309da389-1bfa-4ea3-8822-cd399694fbf4" IsSelected="true" />
+    <ModelItem ItemType="Diagram" DiagramId="d88294c8-0fb4-447f-ac24-626e641b0dc1" IsSelected="true" />
+    <ModelItem ItemType="Diagram" DiagramId="309da389-1bfa-4ea3-8822-cd399694fbf4" IsSelected="false" />
     <ModelItem ItemType="Diagram" DiagramId="cc4442d1-88b5-40da-b18f-2b5d6ec796bb" IsSelected="false" />
   </OpenedItems>
 </UserPreferences>
