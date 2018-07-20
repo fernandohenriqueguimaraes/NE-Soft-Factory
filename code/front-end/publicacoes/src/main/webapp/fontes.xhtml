@@ -1,0 +1,87 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/paradise/template.xhtml">
+
+	<ui:define name="title">Fontes</ui:define>
+
+	<ui:define name="content">
+		<h:form id="form">
+			<p:growl id="msgs" showDetail="true" />
+			<div class="ui-g">
+				<div class="ui-g-12">
+                    <div class="card card-w-title">
+						<p:panel header="Cadastro de fontes" style="margin-bottom:20px">
+							<p:panelGrid columns="4" columnClasses="ui-g-12 ui-md-4 ui-lg-2,ui-g-12 ui-md-8 ui-lg-4,ui-g-12 ui-md-4 ui-lg-2,ui-g-12 ui-md-8 ui-lg-4" layout="grid" 
+                                styleClass="ui-panelgrid-blank form-group form-elements">
+								<p:outputLabel value="Descrição" for="descricao"/>
+								<p:inputText id="descricao" value="#{prototipoFontesController.fonte.descricao}" required="true" />
+
+								<p:outputLabel value="Esfera" for="esfera"/>
+								<p:selectOneMenu id="esfera" value="#{prototipoFontesController.fonte.esfera}" required="true">
+						            <f:selectItem itemLabel="Selecione" itemValue="" />
+						            <f:selectItem itemLabel="Estadual" itemValue="Estadual" />
+						            <f:selectItem itemLabel="Municipal" itemValue="Municipal" />
+						        </p:selectOneMenu>
+							</p:panelGrid>
+							<p:panelGrid columns="2" columnClasses="ui-g-12 ui-md-4 ui-lg-2,ui-g-12 ui-md-8 ui-lg-10" layout="grid" 
+                                styleClass="ui-panelgrid-blank form-group form-elements">
+								<p:outputLabel value="URL" for="url"/>
+								<p:inputText id="url" value="#{prototipoFontesController.fonte.url}" required="true" />
+							</p:panelGrid>
+														
+							<p:toolbar>
+								<p:toolbarGroup>
+ 									<p:commandButton value="Limpar" action="#{prototipoFontesController.limpar()}" process="@this" update="@form"
+										icon="fa fa-eraser White" iconPos="right" style="width:auto;"/>
+									<p:commandButton id="btn_add" value="Salvar" icon="fa fa-save White" iconPos="right" 
+										update="@form" action="#{prototipoFontesController.limpar()}" >
+                						<p:collector value="#{prototipoFontesController.fonte}" addTo="#{prototipoFontesController.fontes}" unique="true"/>
+            						</p:commandButton>
+								</p:toolbarGroup>
+							</p:toolbar>	
+							
+
+						     					
+						</p:panel>
+
+						<p:dataTable id="fontesTable" var="fonte" value="#{prototipoFontesController.fontes}" reflow="true" paginator="true" rows="10">
+                            <f:facet name="header">
+                                Lista de Fontes
+                            </f:facet>
+                            <p:column headerText="Descrição">
+                                <h:outputText value="#{fonte.descricao}" />
+                            </p:column>
+
+                            <p:column headerText="Esfera">
+                                <h:outputText value="#{fonte.esfera}" />
+                            </p:column>
+
+                            <p:column headerText="URL">
+                                <h:outputText value="#{fonte.url}" />
+                            </p:column>
+                            
+                            <p:column headerText="Ações">
+								<p:commandButton icon="fa fa-edit" title="editar" process="fontesTable"
+									action="#{prototipoFontesController.editar(fonte)}" update="@form"/>
+								<p:commandButton icon="fa fa-trash" title="excluir" update="fontesTable" process="fontesTable"
+									actionListener="#{prototipoFontesController.excluir(fonte)}" >                						
+							        <p:confirm header="Confirmação" message="Confirma exclusão dessa fonte?" icon="ui-icon-alert" />
+								</p:commandButton>
+						    </p:column>
+                        </p:dataTable>
+                        
+                   		<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+					        <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+					        <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+					    </p:confirmDialog>
+                        
+                    </div>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
