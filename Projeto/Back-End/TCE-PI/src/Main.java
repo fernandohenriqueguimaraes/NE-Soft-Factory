@@ -52,7 +52,7 @@ public class Main {
         return null;
     }
 
-    // Busca de diário oficial em http://www.dom.teresina.pi.gov.br/lista_diario.php
+    // Busca de diário oficial em http://www.dom.teresina.pi.gov.br/lista_diario.php, http://www.diarioficialdosmunicipios.org/
     // e tambem no http://dom.parnaiba.pi.gov.br/
     public static void getDiariosDOM(String urlString) {
 
@@ -165,11 +165,6 @@ public class Main {
 
     }
 
-    // Busca de diário oficial em http://www.diarioficialdosmunicipios.org/
-    public static void getDiariosEmDiarioOficialDosMunicipios() {
-
-    }
-
     public static void main(String[] args) {
 
         // Vetor de url das fontes
@@ -205,7 +200,6 @@ public class Main {
         }
 
     }
-
-
+    
 }
 
