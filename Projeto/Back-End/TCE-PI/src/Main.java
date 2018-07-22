@@ -267,7 +267,6 @@ public class Main {
         for(Diarios diario : diarios) {
             System.out.println(diario.getFonte()+ " - "+ formatoDeData.format( diario.getDate()) + " - "+ diario.getPdfName());
         }
-
     }
     
 }
