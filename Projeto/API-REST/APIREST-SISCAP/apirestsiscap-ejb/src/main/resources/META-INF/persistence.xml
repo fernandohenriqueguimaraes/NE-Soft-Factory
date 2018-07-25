@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+	<persistence-unit name="siscap" transaction-type="JTA">
+	
+		<!-- Datasource -->
+   		<jta-data-source>java:jboss/datasources/siscapDS</jta-data-source>
+		
+		
+		<!-- Publicações -->
+    	<class>br.com.nesoftware.modelo.Publicacao</class>
+    	
+    	
+    	<!-- Propriedades do Hibernate -->
+        <properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true"/>
+			<property name="hibernate.id.new_generator_mappings" value="false"/>
+			<property name="javax.persistence.validation.mode" value="NONE" /><!--Desabilita a validação automática das entidades do hibernate -->
+			
+			
+			<property name="hibernate.connection.driver_class" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />        
+			<!-- 			
+	        <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=struts_crud</property>
+	        <property name="hibernate.connection.username">sa</property>
+	        <property name="hibernate.connection.password">root</property>
+	        --> 
+        </properties>
+	</persistence-unit>
+</persistence> 

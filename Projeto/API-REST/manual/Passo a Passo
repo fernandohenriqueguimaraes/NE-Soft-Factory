@@ -1,0 +1,51 @@
+1)Baixar jdk 8 (https://www.java.com/pt_BR/download/)
+
+2)Baixar eclipse Photon  (https://www.eclipse.org/downloads/download.php?file=/oomph/epp/photon/R/eclipse-inst-win64.exe)
+
+3)Baixar Wildfly 13.0.0.Final (http://wildfly.org/downloads/) 
+
+4)Baixar o maven 3.5.x (https://maven.apache.org/download.cgi)
+
+5)Configurar o eclipse para apontar para o maven do passo acima
+
+6)Baixar e instalar o sqlserver 2017(https://www.microsoft.com/pt-br/sql-server/sql-server-downloads)
+
+7)Baixar e instalar o SQL Server Management Studio 17.8.1(https://go.microsoft.com/fwlink/?linkid=875802)
+
+8)Realizar esse passo a passo para habilitar o acesso TCP ao SQL SERVER colocando todas as portas para 1433 (https://angmaximo.wordpress.com/2012/06/16/configurando-portas-tcp/)
+
+9)Criar um banco de dados no SQL Server com o nome de "SISCAP"
+
+10)Criar um Logon "siscaptce" e Informar login e senha "siscaptce" e "123456"
+
+11)Adicionar nas permissões do banco "SISCAP", o usuário "SISCAP"
+
+12)Criar uma tabela com o nome "PUBLICACOES" exempo da seguinte forma:
+CREATE TABLE [dbo].[PUBLICACOES](
+	[ID] [numeric](18, 0) NOT NULL,
+	[DT_CADASTRO] [date] NOT NULL,
+	[DT_PUBLICACAO] [date] NOT NULL,
+	[FONTE] [ntext] NOT NULL,
+CONSTRAINT [PK_PUBLICACOES] PRIMARY KEY CLUSTERED 
+
+13)Baixar projetos maven do git (pasta APIREST)
+
+14)Copiar o "standalone_SISCAP.xml" do git para {WILDFLY_DIR}/standalone/configuration
+
+15)Criar Server no eclipse apontando para Wildfly 13.0.0.Final, java 8, standalone_SISCAP.xml e maven baixado
+
+16)Copia a pasta .m2 do git para sua pasta pessoal do computador. Por exemplo: c:/usuarios/helton
+
+17)Copiar o conteúdo de "wildfly-13.0.0.Final-modules-system-layers-base-com-microsoft-sqlserver-main" para "{WILDFLY_DIR}/modules/system/layers/base/com/microsoft/sqlserver/main"
+
+18)Executa o update project no eclipse para atualizar e baixar os pacotes de dependência
+
+19)Executar O Build pelo eclipse
+
+20)Associar o pacote .ear gerado ao servidor
+
+21)Subir o servidor e executar no browser "http://localhost:8080/apirestsiscap/swagger-ui/"
+
+
+
+Os docs citados como standalone, m2, etc estão dentro de "NE-Soft-Factory\Projeto\API-REST\manual"

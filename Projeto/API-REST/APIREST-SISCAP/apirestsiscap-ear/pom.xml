@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+  	<groupId>br.com.nesoftware.backend</groupId>
+  	<artifactId>apirestsiscap</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>apirestsiscap-ear</artifactId>
+  <packaging>ear</packaging>
+  <name>apirestsiscap-ear</name>
+  
+  <properties>
+	 <app.context.root>apirestsiscap</app.context.root>
+	 <java.version>1.7</java.version>
+  </properties>
+  
+  
+  <dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>apirestsiscap-web</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>apirestsiscap-ejb</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
+  </dependencies>
+ 
+  <build>
+	<finalName>${project.parent.artifactId}</finalName>
+	<pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<filtering>true</filtering>
+					<modules>
+						<webModule>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>apirestsiscap-web</artifactId>
+							<contextRoot>${app.context.root}</contextRoot>
+							<bundleFileName>apirestsiscap-web.war</bundleFileName>
+						</webModule>
+						<ejbModule>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>apirestsiscap-ejb</artifactId>
+							<bundleFileName>apirestsiscap-ejb.jar</bundleFileName>
+						</ejbModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</pluginManagement>
+   </build>
+  
+</project>

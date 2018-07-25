@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>apirestsiscap-web</artifactId>
+  <parent>
+  	<groupId>br.com.nesoftware.backend</groupId>
+  	<version>0.0.1-SNAPSHOT</version>
+  	<artifactId>apirestsiscap</artifactId>
+  </parent>
+  <packaging>war</packaging>
+  
+  <name>apirestsiscap-web</name>
+  
+  
+  <dependencies>
+	
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>apirestsiscap-ejb</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+
+		<!-- Java EE 7 Libraries -->
+		<dependency>
+			<groupId>org.jboss.spec</groupId>
+			<artifactId>jboss-javaee-7.0</artifactId>
+			<type>pom</type>
+		</dependency>
+		
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+		</dependency>
+		
+		<dependency>
+		  <groupId>org.hibernate</groupId>
+		  <artifactId>hibernate-validator-cdi</artifactId>
+		</dependency>
+		
+		<!-- Cliente EJB para lookup JNDI de testes, JBOSS EAP 7 -->
+		<dependency>
+		    <groupId>org.wildfly</groupId>
+		    <artifactId>wildfly-ejb-client-bom</artifactId>
+		    <type>pom</type>
+		</dependency>
+		
+		
+		<!-- Swagger(Documentacao do REST) -->
+		<dependency>
+			<groupId>io.swagger</groupId>
+			<artifactId>swagger-jersey2-jaxrs</artifactId>
+		</dependency>
+		
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+				<configuration>
+					<warSourceDirectory>public_html</warSourceDirectory>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

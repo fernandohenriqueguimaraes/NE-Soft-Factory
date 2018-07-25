@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2">
+
+	<deployment>
+	    <exclusions>
+	        <module name="org.apache.log4j" />
+	        <module name="com.fasterxml.jackson.core.jackson-core" />
+	        <module name="com.fasterxml.jackson.core.jackson-annotations" />
+            <module name="com.fasterxml.jackson.core.jackson-databind" />
+            <module name="com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider" />
+            <module name="org.jboss.resteasy.resteasy-jackson-provider" /> 
+			<module name="org.jboss.resteasy.resteasy-jettison-provider" />
+            <module name="org.jboss.resteasy.resteasy-jackson2-provider" />
+	    </exclusions>
+	</deployment>
+
+	<!-- Arquivo de configuração específico para o JBOSS AS 7. -->
+	<sub-deployment name="apirestsiscap-web.war">
+		<exclusions>
+			<module name="org.apache.log4j" />
+			<module name="com.fasterxml.jackson.core.jackson-core" />
+	        <module name="com.fasterxml.jackson.core.jackson-annotations" />
+            <module name="com.fasterxml.jackson.core.jackson-databind" />
+            <module name="com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider" />
+            <module name="org.jboss.resteasy.resteasy-jackson2-provider" />
+            <module name="org.jboss.resteasy.resteasy-jackson-provider" /> 
+			<module name="org.jboss.resteasy.resteasy-jettison-provider" />
+		</exclusions>
+	</sub-deployment>
+	
+	<sub-deployment name="apirestsiscap-ejb.jar">
+		<exclusions>
+			<module name="org.apache.log4j" />
+			<module name="com.fasterxml.jackson.core.jackson-core" />
+	        <module name="com.fasterxml.jackson.core.jackson-annotations" />
+            <module name="com.fasterxml.jackson.core.jackson-databind" />
+            <module name="com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider" />
+            <module name="org.jboss.resteasy.resteasy-jackson2-provider" />
+            <module name="org.jboss.resteasy.resteasy-jackson-provider" /> 
+			<module name="org.jboss.resteasy.resteasy-jettison-provider" />
+		</exclusions>
+	</sub-deployment>
+	
+ </jboss-deployment-structure>

@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>apirestsiscap-ejb</artifactId>
+  <packaging>ejb</packaging>
+  <parent>
+  	<groupId>br.com.nesoftware.backend</groupId>
+  	<artifactId>apirestsiscap</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <name>apirestsiscap-ejb</name>
+  
+  
+  <!-- Dependencias -->
+  <dependencies>
+  		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+		</dependency>
+		
+		<dependency>
+		  <groupId>org.hibernate</groupId>
+		  <artifactId>hibernate-validator-cdi</artifactId>
+		</dependency>
+		
+		<!-- Java EE 7 Libraries -->
+		<dependency>
+			<groupId>org.jboss.spec</groupId>
+			<artifactId>jboss-javaee-7.0</artifactId>
+			<type>pom</type>
+		</dependency>
+		
+		<!-- Cliente EJB para lookup JNDI de testes, JBOSS EAP 7 -->
+		<dependency>
+		    <groupId>org.wildfly</groupId>
+		    <artifactId>wildfly-ejb-client-bom</artifactId>
+		    <type>pom</type>
+		</dependency>
+		
+		<dependency>
+			    <groupId>com.microsoft.sqlserver</groupId>
+			    <artifactId>mssql-jdbc</artifactId>
+		</dependency>
+<!-- 		<dependency>
+		    <groupId>com.microsoft.sqlserver</groupId>
+		    <artifactId>sqljdbc4</artifactId>
+		</dependency>
+ -->			
+	</dependencies>	
+</project>
