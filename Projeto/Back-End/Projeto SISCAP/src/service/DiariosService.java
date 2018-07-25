@@ -113,7 +113,7 @@ public class DiariosService {
                 // A expressão regular das datas e PDFs estão diferentes para cada URL
                 if (urlString.equals(DOM_TERESINA)) {
                     regexForDate = "\\d{2}/\\d{2}/\\d{4}";
-                    regexForPDF = "[0-9A-Za-z]+[-]+[0-9]+[-]+[0-9A-Za-z]+[.][Pp][Dd][Ff]";
+                    regexForPDF = "[0-9A-Za-z]+[-]?+A?+[0-9]+[-]+[0-9A-Za-z]+[.][Pp][Dd][Ff]";
                 } else if (urlString.equals(DOM_PARNAIBA)) {
                     regexForDate = "\\d{2}-\\d{2}-\\d{4}";
                     regexForPDF = "[0-9A-Za-z]+[.][Pp][Dd][Ff]";
@@ -158,10 +158,12 @@ public class DiariosService {
 
             String linhaHTML;
             Date date = null;
+            String urlFonte = urlString;
 
             URL url = new URL(urlString);
             if (urlString.equals(DOM_TERESINA) || urlString.equals(DOM_PARNAIBA)) {
-                url = new URL(urlString + pageDom);
+                urlFonte = urlString + pageDom;
+                url = new URL(urlFonte);
             }
             BufferedReader fonteHTML = new BufferedReader(new InputStreamReader(url.openStream()));
             Pattern datePattern = Pattern.compile(regexForDate);
@@ -185,7 +187,7 @@ public class DiariosService {
                                     || urlString.equals(DIARIO_OFICIAL_DOS_MUNICIPIOS_ESPECIFICA)) {
 
                                 if(dataInicial.compareTo(date) <= 0 && dataFinal.compareTo(date) >= 0) {
-                                    incluirDiarioOficial(urlString, diarios, date, arquivoStr);
+                                    incluirDiarioOficial(urlFonte, diarios, date, arquivoStr);
                                 }
                                 // Necessário nullar o date para evitar trazer PDFs que não contenham na
                                 // lista, e estes estão sem data.
@@ -194,7 +196,7 @@ public class DiariosService {
                                 if (!arquivoList.contains(arquivoStr)) {
                                     arquivoList.add(arquivoStr);
                                     if(dataInicial.compareTo(date) <= 0 && dataFinal.compareTo(date) >= 0) {
-                                        incluirDiarioOficial(urlString, diarios, date, arquivoStr);
+                                        incluirDiarioOficial(urlFonte, diarios, date, arquivoStr);
                                     }
                                     // Necessário nullar o date para evitar trazer PDFs que não contenham na
                                     // lista, e estes estão sem data.
