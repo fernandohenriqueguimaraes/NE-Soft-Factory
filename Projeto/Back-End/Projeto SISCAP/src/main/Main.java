@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Main {
 
-    // URL das fontes disponibilizadas para busca dos diÃ¡rios oficiais
+    // URL das fontes disponibilizadas para busca dos diários oficiais
     public final static String DIARIO_OFICIAL_PI = "http://www.diariooficial.pi.gov.br/diarios.php";
     public final static String DIARIO_OFICIAL_DOS_MUNICIPIOS = "http://www.diarioficialdosmunicipios.org/";
     //public final static String DOM_TERESINA = "http://www.dom.teresina.pi.gov.br/lista_diario.php";
@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
 
         Date dataInicial =  DiariosService.getData("23/07/2018 00:00:00");
-        Date dataFinal = DiariosService.getData("24/07/2018 23:59:59");
+        Date dataFinal = DiariosService.getData("26/07/2018 23:59:59");
 
         // Vetor de url das fontes
         String[] fontes = new String[]{
@@ -30,7 +30,7 @@ public class Main {
         for (String fonte : fontes) {
             switch (fonte) {
                 case DIARIO_OFICIAL_PI:
-                    DiariosService.getDiariosEmDiarioOficialPI();
+                    DiariosService.getDiariosEmDiarioOficialPI(dataInicial, dataFinal);
                     break;
                 case DIARIO_OFICIAL_DOS_MUNICIPIOS:
                     DiariosService.getDiariosDOM(DIARIO_OFICIAL_DOS_MUNICIPIOS, dataInicial, dataFinal);
